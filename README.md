@@ -2,7 +2,7 @@
 
 ## Integrantes
 * Jannire Ashley Trujillo Delgado
-* 1 
+* Johan Andres Oblitas Mantilla
 * 2
 * 3
 * 4
