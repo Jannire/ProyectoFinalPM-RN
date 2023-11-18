@@ -59,9 +59,33 @@ Para acceder al menú de developer en la aplicación solo se debe sacudir el cel
 <img src="https://github.com/Jannire/ProyectoFinalPM-RN/assets/88001855/07ac9a80-3355-49d8-8439-eb0aa4d5b5c6" width="200"/>
 
 
+## Diagrama de Despliegue
+WIP
 
 
+## Requerimientos no funcionales
+A continuación, se detallan los requisitos no funcionales del sistema, los cuales establecen los límites y condiciones que guían el diseño e implementación integral de la aplicación ULima Gimnasio. Estos requisitos son esenciales para garantizar un rendimiento óptimo, seguridad robusta y una experiencia de usuario efectiva.
 
-
-
+### Rendimiento:
+* **Tiempo de respuesta**: El tiempo de respuesta de la aplicación debe ser rápido y eficiente, especialmente al cargar datos desde el servidor o al realizar acciones críticas.
+* **Consumo de recursos**: La aplicación debe ser eficiente en cuanto al uso de la memoria y la energía de la batería del dispositivo.
+### Seguridad:
+* **Autenticación y autorización**: Garantizar que la autenticación sea segura y que solo los usuarios autorizados puedan acceder a funciones específicas de la aplicación.
+* **Protección de datos**: Asegurar la confidencialidad y la integridad de los datos del usuario, tanto en el dispositivo como durante la transmisión de datos hacia y desde el servidor.
+### Escalabilidad:
+* **Número de usuarios concurrentes**: La aplicación debe ser capaz de manejar un número aceptable de usuarios concurrentes sin degradación del rendimiento.
+* **Escalabilidad del servidor**: El servidor backend en Replit debe ser capaz de manejar un crecimiento en la cantidad de datos y usuarios sin pérdida de rendimiento.
+### Disponibilidad:
+* **Tiempo de actividad**: La aplicación debe tener un alto tiempo de actividad para garantizar que los usuarios puedan acceder a ella cuando lo necesiten.
+* **Respaldos y recuperación**: Implementar mecanismos de respaldo regular y procedimientos de recuperación para proteger los datos en caso de fallos.
+### Usabilidad:
+* **Interfaz de usuario intuitiva**: Garantizar que la interfaz de usuario sea fácil de entender y de usar para un amplio rango de usuarios.
+### Compatibilidad:
+* **Compatibilidad con dispositivos**: Asegurar que la aplicación funcione de manera consistente en una variedad de dispositivos Android.
+* **Compatibilidad con versiones de Android**: Garantizar que la aplicación sea compatible con varias versiones de Android para llegar a un público más amplio.
+### Mantenibilidad:
+* **Facilidad de actualización**: La aplicación debe ser diseñada de manera que las actualizaciones se puedan realizar de manera sencilla, sin interrupciones significativas para los usuarios.
+* **Registro y monitoreo**: Implementar registros detallados y mecanismos de monitoreo para facilitar la detección y resolución de problemas.
+### Interoperabilidad:
+* **Integración de plataformas**: Asegurar que la aplicación pueda integrarse con otras plataformas o servicios relacionados con fitness, si es necesario.
 
