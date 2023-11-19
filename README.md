@@ -3,8 +3,7 @@
 ## Integrantes
 * Jannire Ashley Trujillo Delgado
 * Johan Andres Oblitas Mantilla
-* 2
-* 3
+* Alejandro Gomez Lopez
 * 4
 * 5
 * 6
@@ -89,3 +88,7 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 ### Interoperabilidad:
 * **Integración de plataformas**: Asegurar que la aplicación pueda integrarse con otras plataformas o servicios relacionados con fitness, si es necesario.
 
+
+
+## Descripción de los casos de uso
+[![Mockups.png](https://i.postimg.cc/CL5tPD51/Mockups.png)](https://postimg.cc/JGwPtsbV)
