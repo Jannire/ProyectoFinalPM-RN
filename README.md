@@ -103,3 +103,7 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 **Cambiar Contraseña**: El usuario contará con una pantalla para cambiar su contraseña, la cual recibirá los datos de "correo electronico" y "DNI", estos datos se validarán y de ser correctos, se enviará un correo.
 
 [![Reset-Pass.png](https://i.postimg.cc/TYjQwRtr/Reset-Pass.png)](https://postimg.cc/fJLYqhnL)
+
+**Visualizar Perfil**: Desde una pestaña, el usuario podrá acceder a la pantalla del perfil, donde se muestran datos del usuario, tales como teléfono, correo y finalmente, botones para "editar información" y "cerrar sesión".
+
+[![Perfil.png](https://i.postimg.cc/NFkNWYV7/Perfil.png)](https://postimg.cc/4HnbcCXm)
