@@ -104,6 +104,10 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 
 [![Reset-Pass.png](https://i.postimg.cc/TYjQwRtr/Reset-Pass.png)](https://postimg.cc/fJLYqhnL)
 
-**Visualizar Perfil**: Desde una pestaña, el usuario podrá acceder a la pantalla del perfil, donde se muestran datos del usuario, tales como teléfono, correo y finalmente, botones para "editar información" y "cerrar sesión".
+**Editar Perfil**: Desde una pestaña, el usuario podrá acceder a la pantalla del perfil, donde se muestran datos del usuario, tales como teléfono, correo y finalmente, botones para "editar información" y "cerrar sesión".
 
 [![Perfil.png](https://i.postimg.cc/NFkNWYV7/Perfil.png)](https://postimg.cc/4HnbcCXm)
+
+**Visualizar Ejercicios**: Al iniciar sesión, la aplicación le mostrará al usuario una pantalla con todos los ejercicios disponibles, los cuales podrá filtrar según la parte del cuerpo seleccionara, y además podrá visualizar una rutina al elegir un ejercicio.
+
+[![Ejercicios.png](https://i.postimg.cc/GhpJcks1/Ejercicios.png)](https://postimg.cc/c6V8htmD)
