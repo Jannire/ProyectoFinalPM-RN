@@ -93,10 +93,13 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 ## Descripción de los casos de uso
 
 **Crear Usuario**: El aplicativo contará con una pantalla de creación de usuario, la cual almacenará los datos ingresados en una base de datos.
+
 [![Create-Acc.png](https://i.postimg.cc/K8LqtPcg/Create-Acc.png)](https://postimg.cc/jDx4bJ7s)
 
 **Iniciar Sesión**: Se contará con una pantalla para el Login, la cual recibirá las credenciales de usuario y contraseña, estos datos se validarán y de ser ingresados correctamente, darán acceso al usuario a su respectiva cuenta.
+
 [![Login.png](https://i.postimg.cc/sgR866NJ/Login.png)](https://postimg.cc/rKQQzJcd)
 
 **Cambiar Contraseña**: El usuario contará con una pantalla para cambiar su contraseña, la cual recibirá los datos de "correo electronico" y "DNI", estos datos se validarán y de ser correctos, se enviará un correo.
+
 [![Reset-Pass.png](https://i.postimg.cc/TYjQwRtr/Reset-Pass.png)](https://postimg.cc/fJLYqhnL)
