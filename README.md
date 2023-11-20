@@ -129,4 +129,13 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 **Diagrama de Casos de Uso**: El aplicativo contará con ún único actor que será el usuario, el cuál podrá realizar diversas acciones al interactuar con el sistema dentro del aplicativo
 
 [![Diagrama.jpg](https://i.postimg.cc/m2q4RQQY/Diagrama.jpg)](https://postimg.cc/crQ2BtkC)
+C1: El usuario podrá iniciar sesión en aplicativo de acuerdo a su usuario y contraseña.
+C2: El usuario podrá modificar los datos de su perfil.
+C3: El usuario podrá cerrar su sesión. 
+C4: El usuario podrá visualizar los ejercicios asignados a su persona. 
+C5: El usuario podrá seleccionar la rutina de un músculo específico a entrenar.
+C6: El usuario podrá visualizar con detalle un ejercicio seleccionado. 
+C7: El usuario podrá visualizar todos los ejercicios qué incluye el aplicativo. 
+C8: El usuario podrá visualizar con detalle un ejercicio seleccionado. 
+C8: El usuario podrá compartir su información mediante el aplicativo.
 
