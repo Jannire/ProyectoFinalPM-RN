@@ -4,8 +4,8 @@
 * Jannire Ashley Trujillo Delgado
 * Johan Andres Oblitas Mantilla
 * Alejandro Gomez Lopez
-* 4
-* 5
+* Leonardo Nazir Solimano Prina
+* Renato Marcelo Migliori Ruiz 
 * 6
 
 ## Instalación React Native
@@ -111,3 +111,9 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 **Visualizar Ejercicios**: Al iniciar sesión, la aplicación le mostrará al usuario una pantalla con todos los ejercicios disponibles, los cuales podrá filtrar según la parte del cuerpo seleccionara, y además podrá visualizar una rutina al elegir un ejercicio.
 
 [![Ejercicios.png](https://i.postimg.cc/GhpJcks1/Ejercicios.png)](https://postimg.cc/c6V8htmD)
+
+## Creación de diagrama de casos de uso
+
+**Diagrama de Casos de Uso**: El aplicativo contará con ún único actor que será el usuario, el cuál podrá realizar diversas acciones al interactuar con el sistema dentro del aplicativo
+
+<img src="Diagrama de caso de uso.png" width="200"/>
