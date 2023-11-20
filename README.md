@@ -110,6 +110,10 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 
 [![ejercicios2.png](https://i.postimg.cc/k5NHt9KM/ejercicios2.png)](https://postimg.cc/SXsdwBgH)
 
+**Compartir Información**: Este pop up permitirá al usuario compartir su rutina a través de WhatsApp y Facebook.
+
+[![share.png](https://i.postimg.cc/rm8Xggkk/share.png)](https://postimg.cc/kVhpgQG1)
+
 ## Creación de diagrama de casos de uso
 
 **Diagrama de Casos de Uso**: El aplicativo contará con ún único actor que será el usuario, el cuál podrá realizar diversas acciones al interactuar con el sistema dentro del aplicativo
