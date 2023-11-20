@@ -59,7 +59,17 @@ Para acceder al menú de developer en la aplicación solo se debe sacudir el cel
 
 
 ## Diagrama de Despliegue
-WIP
+[![Despliegue.png](https://i.postimg.cc/qM20Gtf4/Despliegue.png)](https://postimg.cc/fJW6zRTr)
+
+**FrontEnd**
+Nuestro aplicativo se despliega de forma nativa en dispositivos móviles, tanto en Android como en iOS, gracias al uso de React Native. RN nos permite hacer uso de los componentes de interfaz de usuarios de forma nativa, además de manejar contenedores con información local.
+
+**BackEnd**
+La lógica del aplicativo se despliega en Replit y se conecta mediante un protocolo HTTP. A través del uso de Node.JS se crea el Api REST, el cual permite al acceso a los servicios del BackEnd. Adicionalmente se almacena la información de los usuarios en una DB almacenada en el mismo Replit.
+
+**Firebase**
+Esta herramienta nos permite gestionar la funcionabilidad de la aplicación. En nuestro caso específico, cuando exista un fallo en la aplicación, el servicio Crashlytics recopilará la información del evento a través de un protocolo HTTP/2.
+
 
 
 ## Requerimientos no funcionales
