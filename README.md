@@ -6,7 +6,7 @@
 * Alejandro Gomez Lopez
 * Leonardo Nazir Solimano Prina
 * Renato Marcelo Migliori Ruiz 
-* 6
+* Sebastian Torres Balmaceda
 
 ## Instalación React Native
 
@@ -117,5 +117,3 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 **Diagrama de Casos de Uso**: El aplicativo contará con ún único actor que será el usuario, el cuál podrá realizar diversas acciones al interactuar con el sistema dentro del aplicativo
 
 <img src="Diagrama de caso de uso.png" width="200"/>
-
-[![Acu-a.jpg](https://i.postimg.cc/zGTrGCch/Acu-a.jpg)](https://postimg.cc/18RTWqPR)
