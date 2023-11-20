@@ -114,4 +114,5 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 
 **Diagrama de Casos de Uso**: El aplicativo contará con ún único actor que será el usuario, el cuál podrá realizar diversas acciones al interactuar con el sistema dentro del aplicativo
 
-[![Diagrama.jpg](https://i.postimg.cc/pX5fyCMq/Diagrama.jpg)](https://postimg.cc/KRFkHnzM)
+[![Diagrama.jpg](https://i.postimg.cc/m2q4RQQY/Diagrama.jpg)](https://postimg.cc/crQ2BtkC)
+
