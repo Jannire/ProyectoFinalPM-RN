@@ -92,25 +92,23 @@ A continuación, se detallan los requisitos no funcionales del sistema, los cual
 
 ## Descripción de los casos de uso
 
-**Crear Usuario**: El aplicativo contará con una pantalla de creación de usuario, la cual almacenará los datos ingresados en una base de datos.
-
-[![Create-Acc.png](https://i.postimg.cc/K8LqtPcg/Create-Acc.png)](https://postimg.cc/jDx4bJ7s)
 
 **Iniciar Sesión**: Se contará con una pantalla para el Login, la cual recibirá las credenciales de usuario y contraseña, estos datos se validarán y de ser ingresados correctamente, darán acceso al usuario a su respectiva cuenta.
 
 [![Login.png](https://i.postimg.cc/sgR866NJ/Login.png)](https://postimg.cc/rKQQzJcd)
 
-**Cambiar Contraseña**: El usuario contará con una pantalla para cambiar su contraseña, la cual recibirá los datos de "correo electronico" y "DNI", estos datos se validarán y de ser correctos, se enviará un correo.
-
-[![Reset-Pass.png](https://i.postimg.cc/TYjQwRtr/Reset-Pass.png)](https://postimg.cc/fJLYqhnL)
 
 **Editar Perfil**: Desde una pestaña, el usuario podrá acceder a la pantalla del perfil, donde se muestran datos del usuario, tales como teléfono, correo y finalmente, botones para "editar información" y "cerrar sesión".
 
 [![Perfil.png](https://i.postimg.cc/NFkNWYV7/Perfil.png)](https://postimg.cc/4HnbcCXm)
 
-**Visualizar Ejercicios**: Al iniciar sesión, la aplicación le mostrará al usuario una pantalla con todos los ejercicios disponibles, los cuales podrá filtrar según la parte del cuerpo seleccionara, y además podrá visualizar una rutina al elegir un ejercicio.
+**Visualizar Rutina**: Al iniciar sesión, la aplicación le mostrará al usuario una pantalla con todos los ejercicios disponibles según su rutina programada, los cuales podrá filtrar según la parte del cuerpo seleccionara, y además podrá visualizar las repeticiones correspondientes al elegir un ejercicio.
 
 [![Ejercicios.png](https://i.postimg.cc/GhpJcks1/Ejercicios.png)](https://postimg.cc/c6V8htmD)
+
+**Visualizar Ejercicios**: Esta pantalla permitirá al usuario ver todos los ejercicios disponibles sin excepciones, además de filtrar según la parte del cuerpo que quiera seleccionar y finalmente, se podrá ver una descripción y un video tutorial del ejercicio seleccionado.
+
+[![ejercicios2.png](https://i.postimg.cc/k5NHt9KM/ejercicios2.png)](https://postimg.cc/SXsdwBgH)
 
 ## Creación de diagrama de casos de uso
 
