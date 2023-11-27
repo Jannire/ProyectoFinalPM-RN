@@ -1,13 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { NativeBaseProvider } from "native-base";
+import AppNavigator from './components/Navigator';
 
 export default function App() {
   console.log("Hello, World!");
   return (
-    <View style={styles.container}>
-      <Text>Hola trabajo de Programación Móvil estamos desde React Native</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <StatusBar
+        animated={true}
+        backgroundColor="orange"
+      />
+      <AppNavigator />
+    </NativeBaseProvider>
   );
 }
 
