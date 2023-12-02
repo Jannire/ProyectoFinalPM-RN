@@ -22,9 +22,9 @@ const AppNavigator = () => {
           component={HomeScreen}
           options={{ title: 'Home' }} />
         <Stack.Screen
-          name="Rutina"
+          name="Ejercicios"
           component={ListaScreen}
-          options={{ title: 'Rutina' }} />
+          options={{ title: 'Ejercicios' }} />
         <Stack.Screen
           name="Login"
           component={LoginScreen} />

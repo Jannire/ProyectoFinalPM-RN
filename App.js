@@ -8,7 +8,7 @@ export default function App() {
     <NativeBaseProvider>
       <StatusBar
         animated={true}
-        backgroundColor="orange"
+        backgroundColor="#fb923c"
       />
       <AppNavigator />
     </NativeBaseProvider>

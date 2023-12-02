@@ -29,13 +29,10 @@ const LoginScreen = ({ navigation }) => {
                                 onPress={() => navigation.navigate("Home")}>
                                 Acceder
                             </Button>
-
                         </Center>
                         <Center h="40" w="20" rounded="md" />
                     </HStack>;
-
                 </Center>
-
             </VStack>
         </View >
     );
