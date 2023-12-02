@@ -6,7 +6,7 @@ import { RUTA_BACKEND } from "../ruta_back.js";
 import BottomBar from "../components/BottomBar.jsx";
 
 
-const HomeScreen = ({ navigation }) => {
+const ListaScreen = ({ navigation }) => {
   const [listadoEjercicio, setlistadoEjercicio] = useState([]);
   const [listadoCombo, setlistadoCombo] = useState([]);
   const [service, setService] = React.useState("");
@@ -69,7 +69,7 @@ const HomeScreen = ({ navigation }) => {
         }
       </Select>
       <Text>
-        Home
+        Rutina
       </Text>
       {
         listadoEjercicio.map((excercise) => {
@@ -85,4 +85,4 @@ const HomeScreen = ({ navigation }) => {
   )
 }
 
-export default HomeScreen;
+export default ListaScreen;

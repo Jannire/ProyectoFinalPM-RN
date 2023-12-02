@@ -26,7 +26,7 @@ const LoginScreen = ({ navigation }) => {
                             <Button
                                 w="70%"
                                 marginY={5}
-                                onPress={() => navigation.navigate('Home')}>
+                                onPress={() => navigation.navigate("Home")}>
                                 Acceder
                             </Button>
 
