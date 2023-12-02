@@ -21,7 +21,7 @@ const BottomBar = ({ navigation }) => {
             '&phone=51' + "955198135";
         Linking.openURL(url)
             .then((data) => {
-                console.log('Mandar mensaje');
+                console.log('AbrirWhatsapp: Mandar mensaje');
             })
             .catch(() => {
                 alert('Hay un error: Whatsapp Compartir');
@@ -32,7 +32,7 @@ const BottomBar = ({ navigation }) => {
         let url = 'https://github.com/Jannire/ProyectoFinalPM-RN';
         Linking.openURL(url)
             .then((data) => {
-                console.log('Abrir repo en Github');
+                console.log('AbrirGithub: Abrir repo en Github');
             })
             .catch(() => {
                 alert('Hay un error: Github Compartir');
@@ -41,21 +41,21 @@ const BottomBar = ({ navigation }) => {
 
     return (
         <View>
-            <HStack bg="orange.400" h="30%">
-                <Center h="100%" w="33%">
-                    <Button variant="ghost" w="100%" h="100%" onPress={() => navigation.navigate("Home")}>
+            <HStack bg="orange.400" h="33%">
+                <Center w="33%" style={styles.buttons}>
+                    <Button variant="ghost" w="100%" onPress={() => navigation.navigate("Home")}>
                         <Icon style={styles.tabs} marginLeft="2.5" viewBox="0 0 24 24"><Path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></Icon>
                         <Text style={styles.tabs} marginBottom="3">Home</Text>
                     </Button>
                 </Center>
-                <Center w="33%">
-                    <Button variant="ghost" w="100%" h="100%" onPress={() => navigation.navigate("Ejercicios")}>
+                <Center w="33%"  style={styles.buttons}>
+                    <Button variant="ghost" w="100%" onPress={() => navigation.navigate("Ejercicios")}>
                         <Icon style={styles.tabs} marginLeft="5" viewBox="0 0 24 24"><Path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></Icon>
                         <Text style={styles.tabs} marginBottom="3">Ejercicios</Text>
                     </Button>
                 </Center>
-                <Center w="33%">
-                    <Button variant="ghost" w="100%" h="100%" onPress={() => setIsOpen(!isOpen)}>
+                <Center w="33%"  style={styles.buttons}>
+                    <Button variant="ghost" w="100%" onPress={() => setIsOpen(!isOpen)}>
                         <ShareIcon style={styles.tabs} marginLeft="5" />
                         <Text style={styles.tabs} marginBottom="3">Compartir</Text>
                     </Button>
@@ -106,6 +106,9 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         alignItems: "center"
     },
+    buttons: {
+        justifyContent: 'flex-start'
+    }
 
 });
 
