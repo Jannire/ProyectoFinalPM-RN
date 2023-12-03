@@ -75,7 +75,6 @@ const HomeScreen = ({ navigation }) => {
   }
   console.log(height);
   useEffect(() => {
-    obtenerEjercicios();
     obtenerPartesdelCuerpo();
     obtenerDataUser();
     
