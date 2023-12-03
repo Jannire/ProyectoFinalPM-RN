@@ -4,6 +4,8 @@ import { StyleSheet, Linking } from 'react-native'
 import { Flex, Spacer, Input, VStack } from "native-base";
 import { Path } from "react-native-svg";
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import HomeScreen from '../screens/HomeScreen';
 
 
@@ -13,15 +15,22 @@ function More({navigation}) {
     const onClose = () => setIsOpen(false);
     const cancelRef = React.useRef(null);
 
+    const cerrarSesion = async () => {
+        await AsyncStorage.removeItem('member_id');
+        await AsyncStorage.removeItem('user_id');
+        console.log("Sesión cerrada!");
+        navigation.navigate("Login")
+    }
+
     return <View>
         <Menu w="190" marginRight="4" trigger={triggerProps => {
             return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
                 <HamburgerIcon size="5" marginRight="4" style={styles.tabs} />
             </Pressable>;
         }}>
-            <Menu.Item onPress={() => navigation.navigate("Profile")}> Editar Perfil</Menu.Item>
+            <Menu.Item onPress={() => navigation.navigate("Profile")}>Editar Perfil</Menu.Item>
             <Menu.Item onPress={() => setIsOpen(!isOpen)}>Acerca de</Menu.Item>
-            <Menu.Item>Cerrar Sesión</Menu.Item>
+            <Menu.Item onPress={() => cerrarSesion()}>Cerrar Sesión</Menu.Item>
         </Menu>
 
         <AlertDialog leastDestructiveRef={cancelRef} isOpen={isOpen} onClose={onClose}>

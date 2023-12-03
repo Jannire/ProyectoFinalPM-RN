@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Select, CheckIcon, ScrollView } from "native-base";
 import { RUTA_BACKEND } from "../ruta_back.js";
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import TopBar from "../components/TopBar.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 
@@ -48,9 +50,14 @@ const HomeScreen = ({ navigation }) => {
     }
   };
 
+  const obtenerDataUser = async () => {
+    const memberID = await AsyncStorage.getItem('member_id');
+    console.log(memberID);
+  }
   useEffect(() => {
-    obtenerEjercicios(),
-      obtenerPartesdelCuerpo()
+    obtenerEjercicios();
+    obtenerPartesdelCuerpo();
+    obtenerDataUser();
   }, [])
 
   return (
@@ -72,6 +79,7 @@ const HomeScreen = ({ navigation }) => {
         </Select>
         <Text>
           Home
+
         </Text>
         {
           listadoEjercicio.map((excercise) => {
