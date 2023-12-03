@@ -53,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
             }
         }
         catch (error) {
-            console.log("Log in usual");
+            console.log("Login usual");
         }
     }
 

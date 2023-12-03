@@ -40,7 +40,7 @@ const BottomBar = ({ navigation }) => {
     };
 
     return (
-        <View>
+        <View >
             <HStack bg="orange.400" h="33%">
                 <Center w="33%" style={styles.buttons}>
                     <Button variant="ghost" w="100%" onPress={() => navigation.navigate("Home")}>
