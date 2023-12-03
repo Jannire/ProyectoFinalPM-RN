@@ -1,4 +1,4 @@
-import { StyleSheet , View } from 'react-native';
+import { StyleSheet, Dimensions, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Center, Text, Image, Select, CheckIcon, ScrollView, Button, Pressable, FlatList, VStack } from "native-base";
 import { RUTA_BACKEND } from "../ruta_back.js";
@@ -13,14 +13,15 @@ const HomeScreen = ({ navigation }) => {
   const [listadoEjercicio, setlistadoEjercicio] = useState([]);
   const [listadoCombo, setlistadoCombo] = useState([]);
   const [service, setService] = React.useState("");
+  const {height} = Dimensions.get ('screen');
   //const [listadoCombo, setlistadoCombo] = useState([])
 
   const obtenerEjercicios = async (body_part_id = null) => {
     try {
       const member_id = await AsyncStorage.getItem('member_id');
       const ruta = body_part_id == null || body_part_id == "" ?
-      `${RUTA_BACKEND}/member/exercises?member_id=${member_id}`:
-      `${RUTA_BACKEND}/member/exercises?member_id=${member_id}&body_part_id=${body_part_id}`
+        `${RUTA_BACKEND}/member/exercises?member_id=${member_id}` :
+        `${RUTA_BACKEND}/member/exercises?member_id=${member_id}&body_part_id=${body_part_id}`
       const response = await fetch(ruta)
       const resp = await response;
       const data = await resp.json()
@@ -72,11 +73,12 @@ const HomeScreen = ({ navigation }) => {
       </VStack>
     </Pressable>
   }
-
+  console.log(height);
   useEffect(() => {
     obtenerEjercicios();
     obtenerPartesdelCuerpo();
     obtenerDataUser();
+    
   }, [])
 
   useEffect(() => {
@@ -84,7 +86,7 @@ const HomeScreen = ({ navigation }) => {
   }, [service])
 
   return (
-    <View>
+    <View style={{ justifyContent: "space-between", height: 1100, position: 'relative' }}>
       <TopBar navigation={navigation} />
       <Select selectedValue={service}
         minWidth="200"
@@ -98,21 +100,19 @@ const HomeScreen = ({ navigation }) => {
           })
         }
       </Select>
-      <Text>
-        Home
+      <Text> Home </Text>
 
-      </Text>
       <FlatList
         data={listadoEjercicio}
         renderItem={mapEjercicios}
         keyExtractor={(ex) => ex.id.toString()}
         numColumns={3} 
-        contentContainerStyle={{ paddingBottom: 50}}/>
+        style={{backgroundColor: "#A3F4C8"}}
+        ListFooterComponentStyle={{ flexGrow: 1, justifyContent: 'flex-end' }}
+        contentContainerStyle={{ flexGrow: 5 }}
+      />
 
-
-      <Text>  </Text>
-
-      <BottomBar navigation={navigation} />
+      <BottomBar navigation={navigation} style={styles.footer} />
     </View >
 
   )
@@ -123,11 +123,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#fb923c',
     alignItems: "center",
     flexWrap: "wrap",
-    flex: 1,
+    flex: 1 / 3,
     justifyContent: 'center',
     padding: 10,
     margin: 5
-  }
+  },
+  footer: {
+    position: 'absolute',
+    flex:0.1,
+    left: 0,
+    right: 0,
+    bottom: -10,
+    backgroundColor:'green',
+    flexDirection:'row',
+    height:80,
+    alignItems:'center',
+  },
+
+
 });
 
 export default HomeScreen;

@@ -41,7 +41,7 @@ const BottomBar = ({ navigation }) => {
 
     return (
         <View >
-            <HStack bg="orange.400" h="33%">
+            <HStack style={styles.footer} bg="orange.400" h="41%" >
                 <Center w="33%" style={styles.buttons}>
                     <Button variant="ghost" w="100%" onPress={() => navigation.navigate("Home")}>
                         <Icon style={styles.tabs} marginLeft="2.5" viewBox="0 0 24 24"><Path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></Icon>
@@ -108,6 +108,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         justifyContent: 'flex-start'
+    },
+    footer: {
+        justifyContent: 'flex-end',
     }
 
 });
