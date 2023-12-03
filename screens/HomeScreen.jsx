@@ -86,7 +86,7 @@ const HomeScreen = ({ navigation }) => {
   }, [service])
 
   return (
-    <View style={{ justifyContent: "space-between", height: 1100, position: 'relative' }}>
+    <View style={{ justifyContent: "space-between", height: "155%", position: 'relative' }}>
       <TopBar navigation={navigation} />
       <Select selectedValue={service}
         minWidth="200"
@@ -100,7 +100,7 @@ const HomeScreen = ({ navigation }) => {
           })
         }
       </Select>
-      <Text> Home </Text>
+    
 
       <FlatList
         data={listadoEjercicio}
