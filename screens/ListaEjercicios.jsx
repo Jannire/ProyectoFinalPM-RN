@@ -1,13 +1,14 @@
 import { StyleSheet, Dimensions, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDisclose, Box, Actionsheet, Center, Text, Image, Select, CheckIcon, ScrollView, Button, Pressable, FlatList, VStack } from "native-base";
 import { RUTA_BACKEND } from "../ruta_back.js";
+import { WebView } from 'react-native-webview';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import EjercicioItem from '../components/EjercicioItem.jsx';
 import TopBar from "../components/TopBar.jsx";
 import BottomBar from "../components/BottomBar.jsx";
-
 
 const ListaScreen = ({ navigation }) => {
   const [listadoEjercicio, setlistadoEjercicio] = useState([]);
@@ -16,10 +17,7 @@ const ListaScreen = ({ navigation }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const onClose = () => setIsOpen(false);
 
-  const [Ejercicio, setEjercicio] = useState();
-
-
-  //const [listadoCombo, setlistadoCombo] = useState([])
+  const [Ejercicio, setEjercicio] = useState({});
 
   const obtenerEjercicios = async (body_part_id = null) => {
     try {
@@ -50,19 +48,21 @@ const ListaScreen = ({ navigation }) => {
       console.log(error);
       console.log("Error: -" + error);
     } finally {
-      console.log("Finally: Llamada obtener body parts (Home)");
+      console.log("Finally: Llamada obtener body parts - Lista");
     }
   };
 
-  const obtenerEjercicioSingular = async(exercise_id) => {
+  const obtenerEjercicioSingular = async (exercise_id) => {
     try {
+      setIsOpen(true);
       console.log("Ejercicio: " + exercise_id);
       const ruta = `${RUTA_BACKEND}/exercise/find?exercise_id=${exercise_id}`
       const response = await fetch(ruta)
       const resp = await response;
       const data = await resp.json();
+      data.video_url = data.video_url.split('=')[1];
+      console.log(data.video_url);
       setEjercicio(data);
-      setIsOpen(!isOpen);
     } catch (error) {
       console.error(error);
       console.log("Error: -" + error)
@@ -73,19 +73,25 @@ const ListaScreen = ({ navigation }) => {
 
   const mapEjercicios = ({ item }) => {
     return <Button style={styles.ex} rounded="8" onPress={() => obtenerEjercicioSingular(item.id)}>
-        <VStack alignContent="space-between" space={2}>
-          <Center>
-            <Image source={{
-              uri: RUTA_BACKEND + "/" + item.image_url
-            }} alt={item.name} w="100" h="100" />
-          </Center>
-          <Center>
-            <Text numberOfLines={2} > {item.name} </Text>
-          </Center>
-        </VStack>
-      </Button>
+      <VStack alignContent="space-between" space={2}>
+        <Center>
+          <Image source={{
+            uri: RUTA_BACKEND + "/" + item.image_url
+          }} alt={item.name} w="100" h="100" />
+        </Center>
+        <Center>
+          <Text numberOfLines={2} > {item.name} </Text>
+        </Center>
+      </VStack>
+    </Button>
   }
-  //console.log(height);
+
+  const renderItem = useCallback(({ item }) => {
+    return (
+      <EjercicioItem item={item} onPress={() => obtenerEjercicioSingular(item.id)} />
+    );
+  }, []);
+
   useEffect(() => {
     obtenerPartesdelCuerpo();
   }, [])
@@ -94,11 +100,15 @@ const ListaScreen = ({ navigation }) => {
     obtenerEjercicios(service);
   }, [service])
 
+
   return (
     <View style={{ justifyContent: "space-between", height: "155%", position: 'relative' }}>
       <TopBar navigation={navigation} />
       <Select selectedValue={service}
-        minWidth="200"
+        marginTop={10}
+        w="85%"
+        alignItems={"center"}
+        marginBottom={7}
         placeholder="Body Part" _selectedItem={{ endIcon: <CheckIcon size="5" /> }}
         mt={1}
         onValueChange={itemValue => setService(itemValue)}>
@@ -109,34 +119,33 @@ const ListaScreen = ({ navigation }) => {
           })
         }
       </Select>
-      <Text> Ejercicios </Text>
 
       <FlatList
         data={listadoEjercicio}
-        renderItem={mapEjercicios}
+        renderItem={renderItem}
         keyExtractor={(ex) => ex.id.toString()}
         numColumns={3}
-        style={{ backgroundColor: "#A3F4C8" }}
         ListFooterComponentStyle={{ flexGrow: 1, justifyContent: 'flex-end' }}
         contentContainerStyle={{ flexGrow: 5 }}
       />
-
       <BottomBar navigation={navigation} style={styles.footer} />
 
-      <Actionsheet isOpen={isOpen} onClose={onClose}>
+      <Actionsheet isOpen={isOpen} onClose={onClose} >
         <Actionsheet.Content>
-          <Box w="100%" h={60} px={4} justifyContent="center">
-            <Text fontSize="16" color="gray.500" _dark={{
+          <Box w="100%" px={4} justifyContent="center">
+            <Text fontSize="20" color="gray.500" _dark={{
               color: "gray.300"
-            }}>
-              
+            }} textAlign={"center"} marginTop={3} marginBottom={5}>
+              {Ejercicio.name}
             </Text>
+            <Text paddingX={5} fontSize={16} marginBottom={5}>
+              {Ejercicio.description}
+            </Text>
+            <Button bg="orange.500" onPress={() => navigation.navigate("VideoPlayer", {url: Ejercicio.video_url})}>
+              Ver video
+            </Button>
+            <Actionsheet.Item isDisabled>..</Actionsheet.Item>
           </Box>
-          <Actionsheet.Item>Delete</Actionsheet.Item>
-          <Actionsheet.Item isDisabled>Share</Actionsheet.Item>
-          <Actionsheet.Item>Play</Actionsheet.Item>
-          <Actionsheet.Item>Favourite</Actionsheet.Item>
-          <Actionsheet.Item>Cancel</Actionsheet.Item>
         </Actionsheet.Content>
       </Actionsheet>
     </View >

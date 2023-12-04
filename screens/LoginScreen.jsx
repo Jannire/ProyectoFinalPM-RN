@@ -48,7 +48,7 @@ const LoginScreen = ({ navigation }) => {
             const userID_check = await AsyncStorage.getItem('user_id');
             console.log("userID");
             console.log(userID_check);
-            if(userID_check != null){
+            if (userID_check != null) {
                 navigation.navigate("Home");
             }
         }
@@ -58,12 +58,11 @@ const LoginScreen = ({ navigation }) => {
     }
 
     useEffect(() => {
-        if(isFocused){
-            obtenerDataUser();    
+        if (isFocused) {
+            obtenerDataUser();
         }
-        console.log("Effect");
     }, [isFocused])
-    console.log("Holas");
+
     const [user, setUser] = React.useState("");
     const [password, setPassword] = React.useState("");
     const handleChangeUser = text1 => setUser(text1);
@@ -80,7 +79,7 @@ const LoginScreen = ({ navigation }) => {
             navigation.navigate("Home");
         }
         else {
-            alert("MAL USER");
+            alert("MAL USER"); // Hacer más bonis
         }
     }
     //
