@@ -59,7 +59,7 @@ const ProfileScreen = ({ navigation }) => {
           }} alt={User.names} borderRadius={100} w="100" h="100" />
         </Center>
         <Center>
-          <VStack w={"90%"}>
+          <VStack w={"70%"}>
             <Center style={{ alignItems: "flex-start" }}>
               <Text style={styles.noms} >{User.last_names} {User.names} </Text>
             </Center>

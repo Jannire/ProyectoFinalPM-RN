@@ -3,6 +3,9 @@ import { Flex, Spacer, Input, VStack, Box, Heading, AspectRatio, Image, Text, Ce
 import { StyleSheet } from 'react-native';
 import { RUTA_BACKEND } from "../ruta_back.js";
 import { useIsFocused } from "@react-navigation/native";
+import { app } from "../firebaseConfig.js";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -13,11 +16,19 @@ const mandarCredenciales = async (user = null, password = null) => {
             alert("Ingresar creds");
         }
         else {
-            const data = {
-                user: user,
-                password: password
+            console.log("user: " + user)
+            const auth = getAuth(app);
+            const db = getFirestore(app)
+            const credentials = await signInWithEmailAndPassword(auth, user, password);
+            const docRef = doc(db, "users_data", credentials.user.uid);
+            const userDoc = await getDoc(docRef);
+            if (!userDoc.exists()) {
+                throw new Error('No existe el usuario');
             }
-            const ruta = `${RUTA_BACKEND}/user/validate`;
+            const data = userDoc.data();
+            return { data: JSON.stringify({ user_id: data.user_id, member_id: data.member_id }), success: true };
+            /*const ruta = `${RUTA_BACKEND}/user/validate`;
+            
             const resp = await fetch(ruta, {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -28,7 +39,8 @@ const mandarCredenciales = async (user = null, password = null) => {
             const dataResp = await resp.json();
             console.log("RESP: ");
             console.log(dataResp);
-            return dataResp;
+            return dataResp;*/
+            return { user_id: 1, member_id: 1 }
         }
     } catch (error) {
         console.error(error);
